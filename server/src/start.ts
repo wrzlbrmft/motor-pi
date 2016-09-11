@@ -51,7 +51,9 @@ _io.on("connection", (socket) => {
 		_io.in(config.ioClientPiRoom).emit("moveUp");
 	});
 
-	// on move down
+	/**
+	 * on move down
+	 */
 	socket.on("moveDown", () => {
 		console.log("moveDown");
 
