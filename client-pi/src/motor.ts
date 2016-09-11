@@ -2,11 +2,9 @@ import config from "./config";
 
 import { Gpio } from "onoff";
 
-if (config.isMotorPresent) {
-	let gpioPinA;
-	let gpioPinY;
-	let gpioPinEn;
-}
+let gpioPinA;
+let gpioPinY;
+let gpioPinEn;
 
 /**
  * initialize motor
