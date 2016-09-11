@@ -1,7 +1,10 @@
 {
   "name": "client-pi",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "onoff": "*",
+    "socket.io-client": "*"
+  },
   "devDependencies": {
     "typescript": "*",
     "typings": "*"

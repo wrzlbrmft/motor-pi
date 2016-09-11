@@ -1,5 +1,7 @@
 {
   "globalDependencies": {
-    "node": "registry:dt/node"
+    "node": "registry:dt/node",
+    "onoff": "registry:dt/onoff",
+    "socket.io-client": "registry:dt/socket.io-client"
   }
 }
