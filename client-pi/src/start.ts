@@ -9,7 +9,7 @@ let socket = io(
 // initial motor status
 let status = {
 	isMoving: false,	// whether the motor is moving right now
-	position: "down"	// current or target position (while moving) of the motor ("up" or "down")
+	position: "up"	// current or target position (while moving) of the motor ("up" or "down")
 };
 
 /**
