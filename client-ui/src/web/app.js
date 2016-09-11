@@ -10,32 +10,51 @@ var mainView = app.addView(".view-main", {
 
 var socket;
 
+/**
+ * on submit of the down button
+ */
 function onDownSubmit() {
 	console.log("onDownSubmit");
 
 	socket.emit("moveDown");
 }
 
+/**
+ * on submit of the up button
+ */
 function onUpSubmit() {
 	console.log("onUpSubmit");
 
 	socket.emit("moveUp");
 }
 
+/**
+ * init page: index
+ */
 app.onPageInit("index", function() {
+	console.log("page init: index");
+
 	app.showPreloader("Connecting...");
 
 	socket = io(
 		"http://" + config.serverHost + ":" + config.serverPort + "/" + config.ioNamespace);
 
+	/**
+	 * on successful connect to the server
+	 */
 	socket.on("connect", function() {
 		console.log("connect");
 
+		// join room of ui clients
 		socket.emit("join", config.ioClientUiRoom);
 
+		// immediately emit a status request to the server, to be up-to-date
 		socket.emit("statusRequest");
 	});
 
+	/**
+	 * on receiving a status response from the server
+	 */
 	socket.on("statusResponse", function(data) {
 		console.log("statusResponse:", data);
 
@@ -64,12 +83,18 @@ app.onPageInit("index", function() {
 	});
 });
 
+/**
+ * init page: up
+ */
 app.onPageInit("up", function() {
 	console.log("onPageInit: up");
 
 	$$("#downSubmit").on("click", onDownSubmit);
 });
 
+/**
+ * init page: down
+ */
 app.onPageInit("down", function() {
 	console.log("onPageInit: down");
 
