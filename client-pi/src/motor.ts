@@ -12,9 +12,11 @@ if (config.isMotorPresent) {
  * initialize motor
  */
 export function initMotor() {
-	gpioPinA = new Gpio(config.motorGpioPinA, "out");
-	gpioPinY = new Gpio(config.motorGpioPinY, "out");
-	gpioPinEn = new Gpio(config.motorGpioPinEn, "out");
+	if (config.isMotorPresent) {
+		gpioPinA = new Gpio(config.motorGpioPinA, "out");
+		gpioPinY = new Gpio(config.motorGpioPinY, "out");
+		gpioPinEn = new Gpio(config.motorGpioPinEn, "out");
+	}
 }
 
 /**
