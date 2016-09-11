@@ -1,0 +1,15 @@
+{
+  "name": "client-pi",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "*",
+    "typings": "*"
+  },
+  "scripts": {
+    "postinstall": "typings install",
+    "prestart": "tsc",
+    "start": "node build/start.js",
+    "clean": "rm -rf build node_modules typings"
+  }
+}
