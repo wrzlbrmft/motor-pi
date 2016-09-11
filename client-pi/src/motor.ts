@@ -1,8 +1,8 @@
 import config from "./config";
 
-if (config.isMotorPresent) {
-	import { Gpio } from "onoff";
+import { Gpio } from "onoff";
 
+if (config.isMotorPresent) {
 	let gpioPinA;
 	let gpioPinY;
 	let gpioPinEn;
