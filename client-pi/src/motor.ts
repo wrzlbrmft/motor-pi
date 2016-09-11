@@ -1,15 +1,15 @@
 import config from "./config";
 
-import { Gpio } from "onoff";
-
 if (config.isMotorPresent) {
+	import { Gpio } from "onoff";
+
 	let gpioPinA;
 	let gpioPinY;
 	let gpioPinEn;
 }
 
 /**
- * init motor
+ * initialize motor
  */
 export function initMotor() {
 	gpioPinA = new Gpio(config.motorGpioPinA, "out");

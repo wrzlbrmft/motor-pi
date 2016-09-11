@@ -32,7 +32,7 @@ function onUpSubmit() {
  * init page: index
  */
 app.onPageInit("index", function() {
-	console.log("page init: index");
+	console.log("onPageInit: index");
 
 	app.showPreloader("Connecting...");
 

@@ -26,6 +26,7 @@ function stopMotor() {
 	console.log("stop motor");
 	motor.stopMotor();
 
+	// hide "Moving..." message on all ui clients
 	status.isMoving = false;
 	emitStatusResponse();
 }
@@ -61,10 +62,11 @@ socket.on("moveUp", () => {
 	// new target position
 	status.position = "up";
 
-	// make all ui clients show "Moving..." message
+	// show "Moving..." message on all ui clients
 	status.isMoving = true;
 	emitStatusResponse();
 
+	// start motor and wait for it to move the given distance (see config)
 	console.log("start motor (up)");
 	motor.startMotorUp();
 	setTimeout(stopMotor, config.motorUpRuntime);
@@ -79,10 +81,11 @@ socket.on("moveDown", () => {
 	// new target position
 	status.position = "down";
 
-	// make all ui clients show "Moving..." message
+	// show "Moving..." message on all ui clients
 	status.isMoving = true;
 	emitStatusResponse();
 
+	// start motor and wait for it to move the given distance (see config)
 	console.log("start motor (down)");
 	motor.startMotorDown();
 	setTimeout(stopMotor, config.motorDownRuntime);
