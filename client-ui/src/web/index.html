@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta charset="utf-8" />
+	<meta name="robots" content="noindex,nofollow" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta name="apple-mobile-web-app-title" content="motor" />
+	<title>motor</title>
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+	<link rel="icon" href="apple-touch-icon.png" />
+	<link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.colors.min.css" />
+	<link rel="stylesheet" type="text/css" media="all" href="all.css" />
+</head>
+<body class="layout-dark">
+<div class="views">
+	<div class="view view-main">
+		<div class="pages navbar-through">
+			<!-- page: index -->
+			<div class="page" data-page="index"></div>
+			<!-- page: up -->
+			<div class="page" data-page="up">
+				<div class="navbar">
+					<div class="navbar-inner">
+						<div class="center">Up</div>
+					</div>
+				</div>
+				<div class="page-content">
+					<div class="content-block">
+						<a id="downSubmit" href="#" class="button button-big button-fill">Move down</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- page: down -->
+		<div class="page" data-page="down">
+			<div class="navbar">
+				<div class="navbar-inner">
+					<div class="center">Down</div>
+				</div>
+			</div>
+			<div class="page-content">
+				<div class="content-block">
+					<a id="upSubmit" href="#" class="button button-big button-fill">Move up</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/js/framework7.min.js"></script>
+<script type="application/javascript" src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script type="application/javascript" src="config.js"></script>
+<script type="application/javascript" src="app.js"></script>
+</body>
+</html>
