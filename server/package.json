@@ -5,13 +5,13 @@
     "socket.io": "*"
   },
   "devDependencies": {
-    "typescript": "*",
-    "typings": "*"
+    "@types/node": "*",
+    "@types/socket.io": "*",
+    "typescript": "*"
   },
   "scripts": {
-    "postinstall": "typings install",
     "prestart": "tsc",
     "start": "node build/start.js",
-    "clean": "rm -rf build node_modules typings"
+    "clean": "rm -rf build node_modules"
   }
 }

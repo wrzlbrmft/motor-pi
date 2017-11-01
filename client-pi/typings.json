@@ -1,9 +1,0 @@
-{
-  "globalDependencies": {
-    "node": "registry:dt/node",
-    "socket.io-client": "registry:dt/socket.io-client"
-  },
-  "dependencies": {
-    "onoff": "registry:dt/onoff"
-  }
-}

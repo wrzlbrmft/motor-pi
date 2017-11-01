@@ -1,6 +1,0 @@
-{
-  "globalDependencies": {
-    "node": "registry:dt/node",
-    "socket.io": "registry:dt/socket.io"
-  }
-}
