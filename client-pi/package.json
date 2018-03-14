@@ -14,6 +14,6 @@
   "scripts": {
     "prestart": "tsc",
     "start": "node build/start.js",
-    "clean": "rm -rf build node_modules"
+    "clean": "rm -rf build node_modules package-lock.json"
   }
 }

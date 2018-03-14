@@ -11,33 +11,32 @@ var mainView = app.addView(".view-main", {
 var socket;
 
 /**
- * on submit of the down button
+ * on click of the down button
  */
-function onDownSubmit() {
-	console.log("onDownSubmit");
+function onDownButton() {
+	console.log("onDownButton");
 
 	socket.emit("moveDown");
 }
 
 /**
- * on submit of the up button
+ * on click of the up button
  */
-function onUpSubmit() {
-	console.log("onUpSubmit");
+function onUpButton() {
+	console.log("onUpButton");
 
 	socket.emit("moveUp");
 }
 
 /**
- * init page: index
+ * init index page
  */
 app.onPageInit("index", function() {
-	console.log("onPageInit: index");
+	console.log("init index page");
 
 	app.showPreloader("Connecting...");
 
-	socket = io(
-		"http://" + config.serverHost + ":" + config.serverPort + "/" + config.ioNamespace);
+	socket = io("http://" + config.serverHost + ":" + config.serverPort + "/" + config.ioNamespace);
 
 	/**
 	 * on successful connect to the server
@@ -46,10 +45,19 @@ app.onPageInit("index", function() {
 		console.log("connect");
 
 		// join room of ui clients
-		socket.emit("join", config.ioClientUiRoom);
+		socket.emit("join", { room: config.ioRoomUi });
 
 		// immediately emit a status request to the server, to be up-to-date
 		socket.emit("statusRequest");
+	});
+
+	/**
+	 * on disconnect from the server
+	 */
+	socket.on("disconnect", function() {
+		console.log("disconnect");
+
+		app.showPreloader("Connecting...");
 	});
 
 	/**
@@ -84,21 +92,21 @@ app.onPageInit("index", function() {
 });
 
 /**
- * init page: up
+ * init up page
  */
 app.onPageInit("up", function() {
-	console.log("onPageInit: up");
+	console.log("init up page");
 
-	$$("#downSubmit").on("click", onDownSubmit);
+	$$("#downSubmit").on("click", onDownButton);
 });
 
 /**
- * init page: down
+ * init down page
  */
 app.onPageInit("down", function() {
-	console.log("onPageInit: down");
+	console.log("init down page");
 
-	$$("#upSubmit").on("click", onUpSubmit);
+	$$("#upSubmit").on("click", onUpButton);
 });
 
 app.init();
